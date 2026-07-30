@@ -111,9 +111,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                   <a href={`mailto:${FIRM_INFO.email}`} className="text-sm text-gray-200 font-medium hover:text-[#C8A84F] transition-colors block py-0.5">
                     General: <span className="underline decoration-dotted">{FIRM_INFO.email}</span>
                   </a>
-                  <a href={`mailto:${FIRM_INFO.consultationEmail}`} className="text-sm text-gray-300 font-medium hover:text-[#C8A84F] transition-colors block py-0.5">
-                    Advisory: <span className="underline decoration-dotted">{FIRM_INFO.consultationEmail}</span>
-                  </a>
                 </div>
               </div>
 

@@ -17,7 +17,7 @@ export const FIRM_INFO = {
   address: "102 PHDL Shopping Complex, Mambilla Barracks, Asokoro, Abuja, FCT, Nigeria.",
   phone: "+234 (0) 8036156828",
   phoneSecondary: "+234 (0) 8146197910",
-  email: "contact@racheykafchamber.com",
+  email: "racheykafchambers@gmail.com",
   consultationEmail: "racheykafchambers@gmail.com",
   hours: "Monday – Friday: 08:00 AM – 06:00 PM (WAT)",
 };
