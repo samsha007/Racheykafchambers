@@ -93,7 +93,7 @@ export const BackendAdmin: React.FC<BackendAdminProps> = ({ onClose }) => {
       }
       triggerToast('Authenticated successfully. Welcome to Chamber Admin Backend.');
     } else {
-      setAuthError('Invalid credentials. (Hint: Use password "racheykaf2026" or PIN "8822")');
+      setAuthError('Invalid credentials.');
     }
   };
 
@@ -274,7 +274,7 @@ to Racheykaf Chamber. Unauthorized distribution is prohibited.
               RACHEYKAF CHAMBER PORTAL
             </span>
             <h2 className="text-2xl font-heading font-extrabold text-white">
-              Admin & Partner Login
+              Admin
             </h2>
             <p className="text-xs text-gray-400">
               Secure authentication required to review confidential client form submissions and downloadable records.
@@ -318,7 +318,7 @@ to Racheykaf Chamber. Unauthorized distribution is prohibited.
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
                   className="w-full bg-[#081826] border border-[#143D73] rounded-xl pl-10 pr-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
-                  placeholder="Enter admin password (e.g. racheykaf2026 or 8822)"
+                  placeholder="Enter admin password"
                 />
               </div>
             </div>
@@ -333,7 +333,6 @@ to Racheykaf Chamber. Unauthorized distribution is prohibited.
                 />
                 <span>Remember session</span>
               </label>
-              <span className="text-[#C8A84F] text-[11px] font-medium">Default PIN: 8822</span>
             </div>
 
             <button
