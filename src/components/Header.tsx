@@ -51,12 +51,12 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center space-x-6">
             <span className="flex items-center gap-1.5 text-gray-300 hover:text-[#C8A84F] transition-colors cursor-default">
               <MapPin className="w-3.5 h-3.5 text-[#C8A84F]" />
-              <span className="tracking-wide">Asokoro, Abuja, FCT, Nigeria</span>
+              <span className="tracking-wide">Mambilla Barracks, Asokoro, Abuja, FCT, Nigeria.</span>
             </span>
             <span className="text-[#C8A84F]/40">•</span>
-            <a href={`tel:${FIRM_INFO.phone}`} className="flex items-center gap-1.5 text-gray-300 hover:text-[#C8A84F] transition-colors">
+            <a href={`tel:${FIRM_INFO.phoneSecondary}`} className="flex items-center gap-1.5 text-gray-300 hover:text-[#C8A84F] transition-colors">
               <Phone className="w-3.5 h-3.5 text-[#C8A84F]" />
-              <span className="tracking-wide">{FIRM_INFO.phone}</span>
+              <span className="tracking-wide">{FIRM_INFO.phoneSecondary}</span>
             </a>
             <span className="text-[#C8A84F]/40">•</span>
             <a href={`mailto:${FIRM_INFO.email}`} className="flex items-center gap-1.5 text-gray-300 hover:text-[#C8A84F] transition-colors">
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center space-x-4">
             <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#143D73]/60 border border-[#C8A84F]/40 text-[#C8A84F] font-mono text-[10px] font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(200,168,79,0.15)]">
               <Shield className="w-3 h-3" />
-              <span>RC: 2018-ABJ</span>
+              <span>BN - 2656205</span>
             </div>
           </div>
         </div>

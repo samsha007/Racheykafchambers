@@ -217,7 +217,7 @@ export const Footer: React.FC<FooterProps> = ({
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4 text-center sm:text-left">
-        <p>© {new Date().getFullYear()} Racheykaf Chamber. All Rights Reserved. RC: 2018-ABJ.</p>
+        <p>© {new Date().getFullYear()} Racheykaf Chamber. All Rights Reserved. BN - 2656205.</p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           {onOpenBackend && (
