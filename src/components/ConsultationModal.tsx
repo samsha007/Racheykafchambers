@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PRACTICE_AREAS, FIRM_INFO } from '../data/firmData';
 import { X, Calendar, Clock, MapPin, Video, Building, CheckCircle2, Download, ShieldCheck, FileText } from 'lucide-react';
+import { addFormSubmission } from '../utils/formStore';
 
 interface ConsultationModalProps {
   initialPractice?: string;
@@ -38,8 +39,23 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
       alert('Please fill in your full name and email address.');
       return;
     }
-    const generatedRef = `RC-CNS-${Math.floor(100000 + Math.random() * 900000)}`;
-    setRefCode(generatedRef);
+    const newSubmission = addFormSubmission({
+      formType: 'Consultation Booking',
+      name: fullName,
+      email: email,
+      phone: phone || undefined,
+      organization: organization || undefined,
+      subject: `Advisory Consultation: ${practiceArea}`,
+      message: `Preferred Venue/Mode: ${mode}. Scheduled Date: ${date} at ${timeSlot}. Notes: ${notes || 'No extra notes provided.'}${fileAttached ? ' [Brief Document Attached]' : ''}`,
+      details: {
+        practiceArea,
+        mode,
+        scheduledDate: date,
+        timeSlot,
+        fileAttached,
+      },
+    });
+    setRefCode(newSubmission.id);
     setStep(2);
   };
 
@@ -136,7 +152,7 @@ END:VCALENDAR`;
                         type="button"
                         key={item.id}
                         onClick={() => setMode(item.id)}
-                        className={`p-3 rounded-sm border text-left flex flex-col items-center justify-center gap-1.5 transition-all text-center ${
+                        className={`p-3.5 rounded-xl border min-h-[52px] text-left flex flex-col items-center justify-center gap-1.5 transition-all text-center cursor-pointer active:scale-95 ${
                           isSelected
                             ? 'bg-gold-gradient text-[#081826] border-[#C8A84F] font-bold'
                             : 'bg-[#0D2438] text-gray-300 border-[#143D73] hover:border-[#C8A84F]/50'
@@ -161,7 +177,7 @@ END:VCALENDAR`;
                     required
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white focus:outline-none focus:border-[#C8A84F]"
                   />
                 </div>
 
@@ -172,7 +188,7 @@ END:VCALENDAR`;
                   <select
                     value={timeSlot}
                     onChange={(e) => setTimeSlot(e.target.value)}
-                    className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white focus:outline-none focus:border-[#C8A84F]"
                   >
                     {timeSlots.map((ts) => (
                       <option key={ts} value={ts}>
@@ -196,7 +212,7 @@ END:VCALENDAR`;
                     placeholder="Full Name *"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                   />
                   <input
                     type="email"
@@ -204,7 +220,7 @@ END:VCALENDAR`;
                     placeholder="Official Email *"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                   />
                 </div>
 
@@ -214,14 +230,14 @@ END:VCALENDAR`;
                     placeholder="Telephone Number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                   />
                   <input
                     type="text"
                     placeholder="Company / Institution Name"
                     value={organization}
                     onChange={(e) => setOrganization(e.target.value)}
-                    className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                   />
                 </div>
 
@@ -230,7 +246,7 @@ END:VCALENDAR`;
                   placeholder="Mandate overview or specific legal questions..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full bg-[#0D2438] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                  className="w-full bg-[#0D2438] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                 />
 
                 {/* File Attachment Mock */}
@@ -252,7 +268,7 @@ END:VCALENDAR`;
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 bg-gold-gradient text-[#081826] font-heading font-bold text-xs uppercase tracking-wider rounded-sm shadow-xl hover:brightness-110 flex items-center justify-center gap-2"
+                className="w-full min-h-[48px] py-3.5 bg-gold-gradient text-[#081826] font-heading font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl hover:brightness-110 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
               >
                 <ShieldCheck className="w-4 h-4" />
                 <span>Confirm & Lock Consultation Slot</span>

@@ -14,11 +14,11 @@ export const FIRM_INFO = {
   leadershipExperience: "08+ Years",
   practiceCount: "25+",
   reach: "Nationwide & Regional Reach",
-  address: "Suite 401, Grand Pavilion Tower, Central Business District, FCT Abuja, Nigeria",
-  phone: "+234 (0) 90 8822 4000",
-  phoneSecondary: "+234 (0) 80 3311 9500",
+  address: "102 PHDL Shopping Complex, Mambilla Barracks, Asokoro, Abuja, FCT, Nigeria.",
+  phone: "+234 (0) 700000000",
+  phoneSecondary: "+234 (0) 8011111111",
   email: "contact@racheykafchamber.com",
-  consultationEmail: "consultations@racheykafchamber.com",
+  consultationEmail: "racheykafchambers@gmail.com",
   hours: "Monday – Friday: 08:00 AM – 06:00 PM (WAT)",
 };
 

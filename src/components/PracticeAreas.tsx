@@ -57,13 +57,13 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
   const renderCard = (practice: PracticeArea, keySuffix: string | number = '', isMarquee = false) => (
     <div
       key={`${practice.id}-${keySuffix}`}
-      className={`bg-[#0D2438]/95 backdrop-blur-md p-6 sm:p-7 rounded-2xl border border-[#143D73]/60 hover:border-[#C8A84F] shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group/card ${
-        isMarquee ? 'w-[300px] sm:w-[350px] md:w-[380px] shrink-0' : 'w-full'
+      className={`bg-[#0D2438]/95 backdrop-blur-md p-5 sm:p-7 rounded-2xl border border-[#143D73]/60 hover:border-[#C8A84F] shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group/card ${
+        isMarquee ? 'w-[280px] sm:w-[340px] md:w-[380px] shrink-0' : 'w-full'
       }`}
     >
       <div>
-        <div className="flex items-center justify-between mb-4">
-          <div className="p-3 bg-[#143D73]/80 rounded-xl text-[#C8A84F] group-hover/card:bg-[#C8A84F] group-hover/card:text-[#081826] transition-colors duration-300">
+        <div className="flex items-center justify-between mb-3.5">
+          <div className="p-2.5 sm:p-3 bg-[#143D73]/80 rounded-xl text-[#C8A84F] group-hover/card:bg-[#C8A84F] group-hover/card:text-[#081826] transition-colors duration-300">
             <IconRenderer name={practice.iconName} className="w-5 h-5" />
           </div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-[#C8A84F] px-2.5 py-1 rounded-full bg-[#143D73]/60 border border-[#C8A84F]/30">
@@ -71,17 +71,17 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
           </span>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-heading font-extrabold text-white mb-2.5 group-hover/card:text-[#C8A84F] transition-colors duration-300">
+        <h3 className="text-base sm:text-xl font-heading font-extrabold text-white mb-2 group-hover/card:text-[#C8A84F] transition-colors duration-300 leading-snug">
           {practice.title}
         </h3>
 
-        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-5 line-clamp-3">
+        <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal mb-4 line-clamp-3">
           {practice.shortDesc}
         </p>
 
         {/* Key Services Preview */}
-        <div className="space-y-1.5 mb-6 pt-4 border-t border-white/10">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-400 block mb-1">
+        <div className="space-y-1.5 mb-5 pt-3.5 border-t border-white/10">
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-gray-400 block mb-1">
             Key Capabilities:
           </span>
           {practice.keyServices.slice(0, 3).map((service, idx) => (
@@ -93,11 +93,11 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
         </div>
       </div>
 
-      {/* Actions Footer */}
-      <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+      {/* Actions Footer - Min 44px Touch Targets */}
+      <div className="pt-3.5 border-t border-white/10 flex items-center justify-between gap-2">
         <button
           onClick={() => onSelectPractice(practice)}
-          className="text-xs font-heading font-bold uppercase tracking-wider text-[#C8A84F] hover:text-white flex items-center gap-1 group/btn"
+          className="min-h-[44px] px-2.5 py-2 text-xs font-heading font-bold uppercase tracking-wider text-[#C8A84F] hover:text-white flex items-center gap-1 group/btn cursor-pointer"
         >
           <span>Explore Scope</span>
           <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -105,10 +105,10 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
 
         <button
           onClick={() => onOpenConsultation(practice.title)}
-          className="text-[11px] font-semibold text-gray-300 hover:text-[#C8A84F] transition-colors flex items-center gap-1"
+          className="min-h-[44px] px-2.5 py-2 text-[11px] font-semibold text-gray-300 hover:text-[#C8A84F] transition-colors flex items-center gap-1 cursor-pointer"
         >
           <span>Retain Team</span>
-          <ChevronRight className="w-3 h-3" />
+          <ChevronRight className="w-3 h-3 text-[#C8A84F]" />
         </button>
       </div>
     </div>
@@ -131,34 +131,32 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
   );
 
   return (
-    <section id="practices" className="py-24 bg-[#051322] text-white relative overflow-hidden border-b border-[#C8A84F]/30">
+    <section id="practices" className="py-16 sm:py-24 bg-[#051322] text-white relative overflow-hidden border-b border-[#C8A84F]/30">
       {/* Background Radial Glow Accents */}
       <div className="absolute top-1/4 left-10 w-[500px] h-[400px] bg-[#143D73]/30 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[600px] h-[500px] bg-[#C8A84F]/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8">
-          <div className="max-w-2xl space-y-4">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-12 gap-6 lg:gap-8">
+          <div className="max-w-2xl space-y-3.5 sm:space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#143D73]/60 border border-[#C8A84F]/30 backdrop-blur-md">
               <Layers className="w-3.5 h-3.5 text-[#C8A84F]" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#C8A84F]">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-[#C8A84F]">
                 Legal Services Directory • 25 Specialized Practice Areas
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight">
               Our Practice Areas.{' '}
               <span className="text-gold-gradient block mt-1">
                 Precision Across Every Discipline.
               </span>
             </h2>
-
-
           </div>
 
-          {/* Practice Search Bar */}
+          {/* Practice Search Bar: text-base on mobile avoids iOS auto-zoom */}
           <div className="w-full lg:w-80 relative shrink-0">
             <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
@@ -166,12 +164,12 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search 25 practice areas..."
-              className="w-full bg-[#0D2438] border border-[#143D73] rounded-xl py-3 pl-11 pr-4 text-xs text-white placeholder-gray-400 focus:outline-none focus:border-[#C8A84F] transition-colors shadow-inner"
+              className="w-full min-h-[48px] bg-[#0D2438] border border-[#143D73] rounded-xl py-3 pl-11 pr-10 text-base sm:text-xs text-white placeholder-gray-400 focus:outline-none focus:border-[#C8A84F] transition-colors shadow-inner"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 hover:text-white"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-400 hover:text-white min-h-[36px] px-2 flex items-center justify-center cursor-pointer"
               >
                 Clear
               </button>
@@ -179,13 +177,13 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
           </div>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar border-b border-white/10">
+        {/* Category Filter Tabs: Min 44px tap target height */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 sm:mb-10 no-scrollbar border-b border-white/10">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2.5 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 ${
+              className={`min-h-[44px] px-4 sm:px-5 py-2.5 rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 cursor-pointer active:scale-95 ${
                 selectedCategory === cat
                   ? 'bg-gold-gradient text-[#081826] shadow-md'
                   : 'bg-[#0D2438] text-gray-300 hover:text-white hover:bg-[#143D73]'

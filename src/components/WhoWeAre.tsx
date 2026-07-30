@@ -8,11 +8,11 @@ interface WhoWeAreProps {
 
 export const WhoWeAre: React.FC<WhoWeAreProps> = () => {
   return (
-    <section id="about" className="py-24 sm:py-28 bg-[#F8FAFC] text-[#1F2937] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-16 sm:py-28 bg-[#F8FAFC] text-[#1F2937] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Two-Column Clean Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
           {/* Left Column: Professional Boardroom Image with Premium 3D Frame */}
           <motion.div
@@ -50,24 +50,24 @@ export const WhoWeAre: React.FC<WhoWeAreProps> = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-5 sm:space-y-6"
           >
             {/* Section Label */}
             <div className="inline-flex items-center gap-2">
               <span className="w-6 h-[2px] bg-[#C8A84F]" />
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#C8A84F]">
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#C8A84F]">
                 WHO WE ARE
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-extrabold text-[#081826] leading-[1.15] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-heading font-extrabold text-[#081826] leading-[1.18] tracking-tight">
               Trusted Legal Advisors. <br className="hidden sm:inline" />
               Strategic Business Partners.
             </h2>
 
             {/* Main Content Body */}
-            <div className="space-y-5 text-base sm:text-lg text-[#1F2937] leading-relaxed font-normal">
+            <div className="space-y-4 sm:space-y-5 text-[16px] sm:text-lg text-[#1F2937] leading-[1.75] font-normal">
               <p>
                 Racheykaf Chamber is a premier Nigerian full-service law firm providing innovative legal, regulatory, commercial, and strategic advisory services to government institutions, multinational corporations, financial institutions, development partners, indigenous businesses, diplomatic missions, and private clients.
               </p>
@@ -80,7 +80,7 @@ export const WhoWeAre: React.FC<WhoWeAreProps> = () => {
                 Our multidisciplinary team possesses extensive experience across litigation, corporate and commercial law, energy and natural resources, regulatory compliance, public policy, institutional governance, arbitration, company secretarial services, and strategic consultancy.
               </p>
 
-              <p className="text-[#081826] font-medium pt-1">
+              <p className="text-[#081826] font-semibold pt-1 border-l-2 border-[#C8A84F] pl-3">
                 At Racheykaf Chamber, we do not merely interpret the law—we provide practical legal strategies that enable our clients to make informed decisions with confidence.
               </p>
             </div>

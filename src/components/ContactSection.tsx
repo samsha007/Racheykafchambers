@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FIRM_INFO, OFFICE_IMAGE } from '../data/firmData';
 import { MapPin, Phone, Mail, Clock, Send, Calendar, CheckCircle2, ShieldCheck, Building, ExternalLink } from 'lucide-react';
+import { addFormSubmission } from '../utils/formStore';
 
 interface ContactSectionProps {
   onOpenConsultation: () => void;
@@ -17,6 +18,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [refCode, setRefCode] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,20 +26,30 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
       alert('Please fill in your name, email, and message details.');
       return;
     }
+    const newSubmission = addFormSubmission({
+      formType: 'Contact Inquiry',
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      organization: formData.organization || undefined,
+      subject: formData.subject,
+      message: formData.message,
+    });
+    setRefCode(newSubmission.id);
     setSubmitted(true);
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#081826] text-white relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 bg-[#081826] text-white relative overflow-hidden border-b border-[#C8A84F]/30">
       
       {/* CONTACT & OFFICE DETAILS GRID */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Column: Office Details */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div>
-              <span className="text-xs uppercase tracking-widest text-[#C8A84F] font-bold block mb-2">
+              <span className="text-[11px] sm:text-xs uppercase tracking-widest text-[#C8A84F] font-bold block mb-2">
                 Executive Chambers & Office Address
               </span>
               <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-white">
@@ -45,57 +57,69 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
               </h3>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 rounded-sm bg-[#0D2438] border border-[#143D73]">
-                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-sm shrink-0">
+            <div className="space-y-4 sm:space-y-6">
+              {/* Address - Clickable to Google Maps */}
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(FIRM_INFO.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 p-4 rounded-xl bg-[#0D2438] border border-[#143D73] hover:border-[#C8A84F]/60 transition-colors group cursor-pointer block"
+              >
+                <div className="p-3 bg-[#143D73] text-[#C8A84F] group-hover:bg-[#C8A84F] group-hover:text-[#081826] rounded-xl shrink-0 transition-colors">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A84F] mb-1">
-                    Chamber Address
-                  </h4>
-                  <p className="text-sm text-gray-200 leading-relaxed font-normal">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A84F]">
+                      Office Address
+                    </h4>
+                    <ExternalLink className="w-3 h-3 text-[#C8A84F] opacity-70 group-hover:opacity-100" />
+                  </div>
+                  <p className="text-sm text-gray-200 leading-relaxed font-normal group-hover:text-white transition-colors">
                     {FIRM_INFO.address}
                   </p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-start gap-4 p-4 rounded-sm bg-[#0D2438] border border-[#143D73]">
-                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-sm shrink-0">
+              {/* Phones - Clickable tel links */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0D2438] border border-[#143D73]">
+                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-xl shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="space-y-1">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A84F] mb-1">
                     Telephone Contacts
                   </h4>
-                  <p className="text-sm text-gray-200 font-medium">
-                    Primary Desk: {FIRM_INFO.phone}
-                  </p>
-                  <p className="text-sm text-gray-300 font-medium">
-                    Direct Line: {FIRM_INFO.phoneSecondary}
-                  </p>
+                  <a href={`tel:${FIRM_INFO.phone}`} className="text-sm text-gray-200 font-medium hover:text-[#C8A84F] transition-colors block py-0.5">
+                    Primary Desk: <span className="underline decoration-dotted">{FIRM_INFO.phone}</span>
+                  </a>
+                  <a href={`tel:${FIRM_INFO.phoneSecondary}`} className="text-sm text-gray-300 font-medium hover:text-[#C8A84F] transition-colors block py-0.5">
+                    Direct Line: <span className="underline decoration-dotted">{FIRM_INFO.phoneSecondary}</span>
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-sm bg-[#0D2438] border border-[#143D73]">
-                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-sm shrink-0">
+              {/* Email - Clickable mailto links */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0D2438] border border-[#143D73]">
+                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-xl shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="space-y-1">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A84F] mb-1">
                     Electronic Mail
                   </h4>
-                  <p className="text-sm text-gray-200 font-medium">
-                    General: {FIRM_INFO.email}
-                  </p>
-                  <p className="text-sm text-gray-300 font-medium">
-                    Advisory: {FIRM_INFO.consultationEmail}
-                  </p>
+                  <a href={`mailto:${FIRM_INFO.email}`} className="text-sm text-gray-200 font-medium hover:text-[#C8A84F] transition-colors block py-0.5">
+                    General: <span className="underline decoration-dotted">{FIRM_INFO.email}</span>
+                  </a>
+                  <a href={`mailto:${FIRM_INFO.consultationEmail}`} className="text-sm text-gray-300 font-medium hover:text-[#C8A84F] transition-colors block py-0.5">
+                    Advisory: <span className="underline decoration-dotted">{FIRM_INFO.consultationEmail}</span>
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-sm bg-[#0D2438] border border-[#143D73]">
-                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-sm shrink-0">
+              {/* Hours */}
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0D2438] border border-[#143D73]">
+                <div className="p-3 bg-[#143D73] text-[#C8A84F] rounded-xl shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -107,31 +131,51 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                   </p>
                 </div>
               </div>
+
+              {/* Local SEO Interactive Google Map Embed */}
+              <div className="rounded-xl overflow-hidden border border-[#C8A84F]/40 shadow-xl bg-[#0A1A2A]">
+                <div className="p-3 bg-[#081826] border-b border-[#143D73] flex items-center justify-between">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#C8A84F] flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#C8A84F]" />
+                    Abuja Headquarters Map Location
+                  </span>
+                  <span className="text-[10px] text-gray-400 font-mono">FCT 900211</span>
+                </div>
+                <iframe
+                  title="Racheykaf Chamber Law Firm Office Location in Asokoro, Abuja FCT, Nigeria"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.98595679581!2d7.521890114786733!3d9.060134493498858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf90b79dfb%3A0x6a2eb2d4993a201!2sMambilla%20Barracks%2C%20Asokoro%2C%20Abuja!5e0!3m2!1sen!2sng!4v1680000000000!5m2!1sen!2sng"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-48 filter grayscale-[0.2] contrast-[1.1]"
+                />
+              </div>
             </div>
-
-
 
           </div>
 
           {/* Right Column: Direct Contact Form */}
-          <div className="lg:col-span-7 bg-[#0D2438] p-8 lg:p-10 rounded-sm border border-[#143D73] relative">
-            <h3 className="text-2xl font-heading font-extrabold text-white mb-2">
+          <div className="lg:col-span-7 bg-[#0D2438] p-5 sm:p-8 lg:p-10 rounded-2xl border border-[#143D73] relative shadow-xl">
+            <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-white mb-2">
               Send Direct Legal Inquiry
             </h3>
-            <p className="text-xs text-gray-300 mb-8 font-normal">
+            <p className="text-xs text-gray-300 mb-6 sm:mb-8 font-normal leading-relaxed">
               For urgent corporate, commercial, regulatory, or litigation mandates, complete the encrypted form below. Our managing partner office will respond within 2 business hours.
             </p>
 
             {submitted ? (
-              <div className="bg-[#081826] p-8 rounded-sm border border-[#C8A84F] text-center space-y-4 animate-in zoom-in-95 duration-200">
-                <div className="w-16 h-16 rounded-full bg-[#0F8B6D]/20 text-[#0F8B6D] flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
+              <div className="bg-[#081826] p-6 sm:p-8 rounded-xl border border-[#C8A84F] text-center space-y-4 animate-in zoom-in-95 duration-200">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0F8B6D]/20 text-[#0F8B6D] flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8" />
                 </div>
-                <h4 className="text-2xl font-heading font-extrabold text-white">
+                <h4 className="text-xl sm:text-2xl font-heading font-extrabold text-white">
                   Inquiry Transmitted Successfully
                 </h4>
-                <p className="text-xs text-gray-300 max-w-md mx-auto">
-                  Thank you, <strong className="text-[#C8A84F]">{formData.name}</strong>. Your inquiry regarding <strong className="text-white">{formData.subject}</strong> has been assigned reference code <span className="font-mono text-[#C8A84F] font-bold">RC-INQ-{(Math.random() * 100000).toFixed(0)}</span>. A partner will contact you shortly.
+                <p className="text-xs sm:text-sm text-gray-300 max-w-md mx-auto leading-relaxed">
+                  Thank you, <strong className="text-[#C8A84F]">{formData.name}</strong>. Your inquiry regarding <strong className="text-white">{formData.subject}</strong> has been assigned reference code <span className="font-mono text-[#C8A84F] font-bold">{refCode || 'RC-INQ-88301'}</span>. A partner will contact you shortly.
                 </p>
                 <button
                   onClick={() => {
@@ -145,16 +189,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                       message: '',
                     });
                   }}
-                  className="px-6 py-2.5 bg-gold-gradient text-[#081826] text-xs font-bold uppercase tracking-wider rounded-sm mt-4"
+                  className="w-full sm:w-auto min-h-[48px] px-6 py-3 bg-gold-gradient text-[#081826] text-xs font-bold uppercase tracking-wider rounded-xl mt-4 cursor-pointer"
                 >
                   Submit Another Inquiry
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
                       Full Name *
                     </label>
                     <input
@@ -163,12 +207,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Chief Adeleke Johnson"
-                      className="w-full bg-[#081826] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                      className="w-full min-h-[48px] bg-[#081826] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
                       Email Address *
                     </label>
                     <input
@@ -177,14 +221,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. adeleke@company.com"
-                      className="w-full bg-[#081826] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                      className="w-full min-h-[48px] bg-[#081826] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
                       Telephone Number
                     </label>
                     <input
@@ -192,12 +236,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+234..."
-                      className="w-full bg-[#081826] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                      className="w-full min-h-[48px] bg-[#081826] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
                       Organization / Entity
                     </label>
                     <input
@@ -205,19 +249,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                       placeholder="Company / Government Body"
-                      className="w-full bg-[#081826] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                      className="w-full min-h-[48px] bg-[#081826] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
                     Inquiry Nature / Practice Area
                   </label>
                   <select
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full bg-[#081826] border border-[#143D73] rounded-sm p-3 text-xs text-white focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full min-h-[48px] bg-[#081826] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white focus:outline-none focus:border-[#C8A84F]"
                   >
                     <option>Corporate Advisory Inquiry</option>
                     <option>Oil, Gas & Energy Regulation</option>
@@ -231,7 +275,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
                     Inquiry Brief & Requirements *
                   </label>
                   <textarea
@@ -240,14 +284,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Provide a confidential overview of your legal requirements or mandate..."
-                    className="w-full bg-[#081826] border border-[#143D73] rounded-sm p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
+                    className="w-full bg-[#081826] border border-[#143D73] rounded-xl p-3 text-base sm:text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#C8A84F]"
                   />
                 </div>
 
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gold-gradient text-[#081826] font-heading font-bold text-xs uppercase tracking-wider rounded-sm shadow-xl hover:brightness-110 flex items-center justify-center gap-2"
+                    className="w-full min-h-[48px] py-3.5 bg-gold-gradient text-[#081826] font-heading font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-xl hover:brightness-110 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
                   >
                     <Send className="w-4 h-4" />
                     <span>Transmit Encrypted Inquiry</span>
