@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FIRM_INFO, LOGO_IMAGE } from '../data/firmData';
-import { MapPin, Phone, Mail, Clock, ArrowUp, Send, CheckCircle2, Linkedin, Facebook, Lock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowUp, Send, CheckCircle2, Linkedin, Facebook, Youtube, Instagram, Lock } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -61,6 +61,9 @@ export const Footer: React.FC<FooterProps> = ({
             </p>
 
             <div className="pt-1 flex flex-wrap items-center gap-3 text-xs text-gray-400">
+              <span className="text-[11px] font-semibold text-[#C8A84F] block w-full sm:w-auto mt-1 sm:mt-0">
+                Join Our Online Conversation,
+              </span>
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -79,10 +82,24 @@ export const Footer: React.FC<FooterProps> = ({
               >
                 <Facebook className="w-4 h-4" />
               </a>
-              <span className="text-gray-500 hidden sm:inline">•</span>
-              <span className="text-[11px] font-semibold text-[#C8A84F] block w-full sm:w-auto mt-1 sm:mt-0">
-                Abuja • Lagos • Port Harcourt
-              </span>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#C8A84F] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
+                title="YouTube"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#C8A84F] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
+                title="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -148,11 +165,6 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button onClick={() => onNavigate('contact')} className="hover:text-[#C8A84F] py-1 inline-block min-h-[36px] cursor-pointer">
                   Contact Chambers
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('faq')} className="hover:text-[#C8A84F] py-1 inline-block min-h-[36px] cursor-pointer">
-                  Legal FAQs
                 </button>
               </li>
               {onOpenSitemap && (

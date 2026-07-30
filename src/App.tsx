@@ -8,8 +8,6 @@ import { PracticeAreas } from './components/PracticeAreas';
 import { Industries } from './components/Industries';
 import { Leadership } from './components/Leadership';
 import { RepresentativeExperience } from './components/RepresentativeExperience';
-import { ThoughtLeadership } from './components/ThoughtLeadership';
-import { LegalFAQSection } from './components/LegalFAQSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
@@ -47,6 +45,34 @@ export default function App() {
   const [legalDocsType, setLegalDocsType] = useState<'privacy' | 'terms' | null>(null);
   const [isBackendOpen, setIsBackendOpen] = useState<boolean>(false);
 
+  // Check URL pathname for /admin or /backend or /login on load and popstate
+  useEffect(() => {
+    const checkRoute = () => {
+      const path = window.location.pathname.toLowerCase();
+      if (
+        path === '/admin' ||
+        path === '/admin/' ||
+        path.startsWith('/admin/') ||
+        path.startsWith('/backend') ||
+        path.startsWith('/login')
+      ) {
+        setIsBackendOpen(true);
+      }
+    };
+
+    checkRoute();
+    window.addEventListener('popstate', checkRoute);
+    return () => window.removeEventListener('popstate', checkRoute);
+  }, []);
+
+  const handleCloseBackend = () => {
+    setIsBackendOpen(false);
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes('/admin') || path.includes('/backend') || path.includes('/login')) {
+      window.history.pushState({}, '', '/');
+    }
+  };
+
   // Keybindings for quick admin access (Ctrl+Shift+A) or Search (Ctrl+K)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -71,7 +97,7 @@ export default function App() {
       setScrollProgress(progress);
 
       // Section tracking
-      const sections = ['home', 'about', 'practices', 'industries', 'leadership', 'experience', 'insights', 'faq', 'contact'];
+      const sections = ['home', 'about', 'practices', 'industries', 'leadership', 'experience', 'contact'];
       for (const sectionId of sections) {
         const elem = document.getElementById(sectionId);
         if (elem) {
@@ -172,13 +198,6 @@ export default function App() {
           onOpenConsultation={(title) => handleOpenConsultation(title)}
         />
 
-        <ThoughtLeadership />
-
-        <LegalFAQSection
-          onOpenConsultation={(topic) => handleOpenConsultation(topic)}
-          onOpenFeeEstimator={() => setIsFeeEstimatorOpen(true)}
-        />
-
         <ContactSection
           onOpenConsultation={() => handleOpenConsultation()}
         />
@@ -204,7 +223,7 @@ export default function App() {
       />
       {isBackendOpen && (
         <BackendAdmin
-          onClose={() => setIsBackendOpen(false)}
+          onClose={handleCloseBackend}
         />
       )}
       {isConsultationOpen && (

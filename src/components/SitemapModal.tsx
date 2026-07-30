@@ -61,8 +61,6 @@ export const SitemapModal: React.FC<SitemapModalProps> = ({
                 { id: 'leadership', label: 'Lawyers & Senior Leadership' },
                 { id: 'industries', label: 'Sectors & Industries Served' },
                 { id: 'experience', label: 'Representative Case Track Record' },
-                { id: 'insights', label: 'Thought Leadership & CSR' },
-                { id: 'faq', label: 'Legal FAQs & Intelligence' },
                 { id: 'contact', label: 'Contact Chambers & Office Address' },
               ].map((item) => (
                 <li key={item.id}>

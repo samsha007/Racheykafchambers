@@ -132,27 +132,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenConsultati
                 </div>
               </div>
 
-              {/* Local SEO Interactive Google Map Embed */}
-              <div className="rounded-xl overflow-hidden border border-[#C8A84F]/40 shadow-xl bg-[#0A1A2A]">
-                <div className="p-3 bg-[#081826] border-b border-[#143D73] flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#C8A84F] flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#C8A84F]" />
-                    Abuja Headquarters Map Location
-                  </span>
-                  <span className="text-[10px] text-gray-400 font-mono">FCT 900211</span>
-                </div>
-                <iframe
-                  title="Racheykaf Chamber Law Firm Office Location in Asokoro, Abuja FCT, Nigeria"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.98595679581!2d7.521890114786733!3d9.060134493498858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf90b79dfb%3A0x6a2eb2d4993a201!2sMambilla%20Barracks%2C%20Asokoro%2C%20Abuja!5e0!3m2!1sen!2sng!4v1680000000000!5m2!1sen!2sng"
-                  width="100%"
-                  height="200"
-                  style={{ border: 0 }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-48 filter grayscale-[0.2] contrast-[1.1]"
-                />
-              </div>
+
             </div>
 
           </div>
