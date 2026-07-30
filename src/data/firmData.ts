@@ -1,7 +1,7 @@
 import { PracticeArea, Industry, TeamMember, ValueProp, WhyChooseUsItem, RepresentativeCase, Article } from '../types';
 
 export const HERO_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785341524/72ec10e2-710a-49d5-9418-dcb7673fc0b6_jgdvz5.png';
-export const LOGO_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326287/logo_lu8sqh.png';
+export const LOGO_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785436109/main_logo_xjg4yj.png';
 export const FOUNDER_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326414/partner_b4viun.jpg';
 export const OFFICE_IMAGE = '/src/assets/images/abuja_chamber_office_1785321156057.jpg';
 
@@ -15,8 +15,8 @@ export const FIRM_INFO = {
   practiceCount: "25+",
   reach: "Nationwide & Regional Reach",
   address: "102 PHDL Shopping Complex, Mambilla Barracks, Asokoro, Abuja, FCT, Nigeria.",
-  phone: "+234 (0) 700000000",
-  phoneSecondary: "+234 (0) 8011111111",
+  phone: "+234 (0) 8036156828",
+  phoneSecondary: "+234 (0) 8146197910",
   email: "contact@racheykafchamber.com",
   consultationEmail: "racheykafchambers@gmail.com",
   hours: "Monday – Friday: 08:00 AM – 06:00 PM (WAT)",

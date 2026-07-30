@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Left Column: Content */}
       <div className="w-full lg:w-[60%] p-5 sm:p-10 lg:p-16 flex flex-col justify-center relative z-10">
         <div className="mb-4 inline-flex items-center gap-2.5 text-[#C8A84F] font-semibold text-xs tracking-[0.18em] uppercase">
-          <div className="w-6 sm:w-8 h-[1px] bg-[#C8A84F]" />
+          <div className="w-6 sm:w-8 h-[1.5px] bg-[#D3A77E]" />
           <span>Premier Commercial Law Firm • Nigeria</span>
         </div>
 

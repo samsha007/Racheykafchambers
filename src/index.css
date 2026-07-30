@@ -18,6 +18,23 @@
   font-family: 'Manrope', system-ui, sans-serif;
 }
 
+/* Tertiary Brand Accent (#D3A77E) */
+.border-tertiary {
+  border-color: #D3A77E;
+}
+
+.text-tertiary {
+  color: #D3A77E;
+}
+
+.bg-tertiary {
+  background-color: #D3A77E;
+}
+
+.accent-line-tertiary {
+  background: linear-gradient(90deg, transparent, #D3A77E, transparent);
+}
+
 .text-gold-gradient {
   background: linear-gradient(135deg, #E2C26D 0%, #C8A84F 50%, #9E7B2B 100%);
   -webkit-background-clip: text;

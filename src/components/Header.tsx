@@ -90,15 +90,15 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center space-x-2.5 sm:space-x-3.5 text-left group focus:outline-none py-1 cursor-pointer"
             aria-label="Racheykaf Chamber - Return to Home"
           >
-            <div className="relative p-1 rounded-xl bg-white/5 border border-[#C8A84F]/30 group-hover:border-[#C8A84F] transition-colors shrink-0">
+            <div className="relative p-1.5 rounded-xl bg-white/5 border border-[#C8A84F]/30 group-hover:border-[#D3A77E] transition-colors shrink-0">
               <img
                 src={LOGO_IMAGE}
                 alt="Racheykaf Chamber Official Logo"
-                className="h-9 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                className="h-[38px] md:h-[52px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.04]"
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="flex flex-col border-l border-[#C8A84F]/40 pl-2.5 sm:pl-3.5">
+            <div className="flex flex-col border-l border-[#D3A77E]/40 pl-2.5 sm:pl-3.5">
               <span className="font-heading font-extrabold text-base sm:text-xl tracking-tight text-white uppercase leading-none group-hover:text-[#C8A84F] transition-colors">
                 Racheykaf <span className="font-light text-gray-300">Chamber</span>
               </span>
@@ -171,8 +171,8 @@ export const Header: React.FC<HeaderProps> = ({
               {/* Drawer Top Header */}
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
                 <div className="flex items-center space-x-2.5">
-                  <div className="p-1 rounded-lg bg-white/5 border border-[#C8A84F]/30">
-                    <img src={LOGO_IMAGE} alt="Logo" className="h-8 w-auto" referrerPolicy="no-referrer" />
+                  <div className="p-1 rounded-lg bg-white/5 border border-[#D3A77E]/30">
+                    <img src={LOGO_IMAGE} alt="Logo" className="h-[38px] w-auto object-contain" referrerPolicy="no-referrer" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-heading font-extrabold text-sm uppercase text-white">

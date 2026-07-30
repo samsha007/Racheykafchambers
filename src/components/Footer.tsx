@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({
                 className="h-12 sm:h-16 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
-              <div className="border-l border-gray-700/80 pl-3">
+              <div className="border-l border-[#D3A77E]/40 pl-3">
                 <span className="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-white block uppercase">
                   Racheykaf <span className="text-[#C8A84F] font-normal">Chamber</span>
                 </span>
@@ -61,14 +61,14 @@ export const Footer: React.FC<FooterProps> = ({
             </p>
 
             <div className="pt-1 flex flex-wrap items-center gap-3 text-xs text-gray-400">
-              <span className="text-[11px] font-semibold text-[#C8A84F] block w-full sm:w-auto mt-1 sm:mt-0">
+              <span className="text-[11px] font-semibold text-[#D3A77E] block w-full sm:w-auto mt-1 sm:mt-0">
                 Join Our Online Conversation,
               </span>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#C8A84F] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
+                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#D3A77E] hover:border-[#D3A77E] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
                 title="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#C8A84F] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
+                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#D3A77E] hover:border-[#D3A77E] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
                 title="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#C8A84F] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
+                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#D3A77E] hover:border-[#D3A77E] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
                 title="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#C8A84F] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
+                className="w-11 h-11 rounded-xl bg-[#081826] border border-[#143D73] text-[#C8A84F] hover:bg-[#D3A77E] hover:border-[#D3A77E] hover:text-[#081826] transition-colors flex items-center justify-center cursor-pointer"
                 title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
