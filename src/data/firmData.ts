@@ -372,8 +372,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
       'She is widely respected for her analytical ability, sound judgment, exceptional drafting skills and unwavering commitment to professional excellence. Under her leadership, Racheykaf Chamber continues to expand its reputation as a trusted provider of sophisticated legal and regulatory advisory services.'
     ],
     expertise: ['Public Sector Legal Advisory', 'Petroleum Regulation', 'Legislative Drafting', 'Institutional Governance', 'Commercial Law'],
-    education: ['LL.B – University of Lagos', 'Barrister-at-Law (B.L) – Nigerian Law School', 'LL.M – Energy & Commercial Law', 'FCAI – Institute of Corporate Administration'],
-    admissions: ['Supreme Court of Nigeria', 'Fellow, Institute of Corporate Administration (FCAI)', 'Nigerian Bar Association'],
+    education: ['LL.B – University of Abuja', 'Barrister-at-Law (B.L) – Nigerian Law School', 'LL.M – Energy & Commercial Law', 'FCAI – Institute of Corporate Administration'],
+    admissions: ['International Federation of Womans Lawyers ( Fida Nigeria).', 'African Women Lawyers Association.', 'Alternative Dispute Resolution Secretary.', 'NBA Women Forum.'],
     email: 'k.olusuyi@racheykafchamber.com',
     image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326415/new_khqebt.jpg',
     isFounder: true,
@@ -413,7 +413,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     education: ['Diplomatic Executive Studies', 'Public Administration'],
     admissions: ['Nigerian Foreign Service', 'Former Permanent Secretary'],
     email: 'n.ella@racheykafchamber.com',
-    image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326284/WhatsApp_Image_2026-07-21_at_3.26.00_PM_ry1xak.jpg',
+    image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785449667/WhatsApp_Image_2026-07-30_at_10.17.00_PM_ewws3v.jpg',
     philosophy: 'Enduring institutions are built through principled leadership, constructive engagement, and strategic vision.',
   },
   {
