@@ -1,6 +1,6 @@
 import { PracticeArea, Industry, TeamMember, ValueProp, WhyChooseUsItem, RepresentativeCase, Article } from '../types';
 
-export const HERO_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785341524/72ec10e2-710a-49d5-9418-dcb7673fc0b6_jgdvz5.png';
+export const HERO_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785623633/ChatGPT_Image_Aug_1_2026_11_29_20_PM_rymlvp.png';
 export const LOGO_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785436109/main_logo_xjg4yj.png';
 export const FOUNDER_IMAGE = 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326414/partner_b4viun.jpg';
 export const OFFICE_IMAGE = '/src/assets/images/abuja_chamber_office_1785321156057.jpg';
@@ -366,14 +366,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Mrs. Kate O. Olusuyi is the visionary Founder and Principal Partner of Racheykaf Chamber. She is a distinguished legal practitioner with over twenty years of progressive experience in public sector legal advisory, litigation, petroleum regulation, legislative drafting, institutional governance and commercial law.',
     fullBio: [
       'Mrs. Kate O. Olusuyi is the visionary Founder and Principal Partner of Racheykaf Chamber. She is a distinguished legal practitioner with over twenty years of progressive experience in public sector legal advisory, litigation, petroleum regulation, legislative drafting, institutional governance and commercial law.',
-      'Throughout her distinguished career, she has served in senior legal positions within the Office of the Attorney-General of the Federation, Federal Ministry of Housing and urban Development, Federal Ministry of Information, Medical Laboratory Science Council of Nigeria, Federal Ministry of Education and the Federal Ministry of Petroleum Resources, where she provided strategic legal advice on policy formulation, regulatory compliance, contract administration, public procurement, litigation management and institutional governance.',
+      'Throughout her distinguished career, she has served in senior legal positions within the Office of the Attorney-General of the Federation, Federal Ministry of Housing and urban Development, Federal Ministry of Information, Medical Laboratory Science Council of Nigeria, Federal Ministry of Education and the Ministry of Petroleum Resources (MPR), where she provided strategic legal advice on policy formulation, regulatory compliance, contract administration, public procurement, litigation management and institutional governance.',
       'Her unique blend of public sector experience and private legal practice enables her to provide clients with practical solutions that balance legal compliance, commercial realities and strategic objectives.',
       'Mrs. Olusuyi has advised Federal Ministries, government agencies, corporate organisations and private institutions on complex legal, regulatory and policy issues while successfully representing clients before superior courts of record across Nigeria.',
       'She is widely respected for her analytical ability, sound judgment, exceptional drafting skills and unwavering commitment to professional excellence. Under her leadership, Racheykaf Chamber continues to expand its reputation as a trusted provider of sophisticated legal and regulatory advisory services.'
     ],
     expertise: ['Public Sector Legal Advisory', 'Petroleum Regulation', 'Legislative Drafting', 'Institutional Governance', 'Commercial Law'],
-    education: ['LL.B – University of Abuja', 'Barrister-at-Law (B.L) – Nigerian Law School', 'LL.M – Energy & Commercial Law', 'FCAI – Institute of Corporate Administration'],
-    admissions: ['International Federation of Womans Lawyers ( Fida Nigeria).', 'African Women Lawyers Association.', 'Alternative Dispute Resolution Secretary.', 'NBA Women Forum.'],
+    education: ['LL.B – University of Abuja', 'Barrister-at-Law (B.L) – Nigerian Law School', 'LL.M - Law Enforcement and Administration', 'FCAI – Institute of Corporate Administration.'],
+    admissions: ['Supreme Court of Nigeria', 'Member, Nigerian Bar Association', 'International Federation of Womans Lawyers ( Fida Nigeria).', 'African Women Lawyers Association.', 'Alternative Dispute Resolution Secretary.', 'NBA Women Forum.'],
     email: 'k.olusuyi@racheykafchamber.com',
     image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326415/new_khqebt.jpg',
     isFounder: true,
@@ -436,25 +436,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     philosophy: 'Sound legal advice creates certainty, protects investments, and lays the foundation for lasting commercial success.',
   },
   {
-    id: 'samuel-chukwu',
-    name: 'SAMUEL C. CHUKWU ESQ.',
-    role: 'Partner',
-    title: 'Strategy, Governance & Capacity Development',
-    bio: 'Barr. Samuel C. Chukwu is a Partner whose practice combines legal advisory with institutional development, leadership consulting, governance, and strategic capacity building. He works with public institutions, private organisations, educational establishments, and development partners to strengthen governance structures.',
-    fullBio: [
-      'Barr. Samuel C. Chukwu is a Partner whose practice combines legal advisory with institutional development, leadership consulting, governance, and strategic capacity building. He works with public institutions, private organisations, educational establishments, and development partners to strengthen governance structures, improve regulatory compliance, and enhance organisational effectiveness.',
-      'Beyond legal advisory, Barr. Chukwu is passionate about leadership development and institutional transformation. He has facilitated professional training programmes, executive workshops, and governance seminars designed to improve organisational performance and promote ethical leadership.',
-      'His multidisciplinary perspective enables him to bridge legal, managerial, and strategic considerations, assisting clients in making informed decisions that support sustainable institutional growth.',
-      'Within the Firm, he leads initiatives relating to organisational strategy, policy development, knowledge management, and professional development.'
-    ],
-    expertise: ['Corporate Governance', 'Institutional Advisory', 'Policy Development', 'Capacity Building', 'Employment & Administrative Law', 'Alternative Dispute Resolution', 'Public Sector Advisory', 'Strategic Planning'],
-    education: ['LL.B (Hons)', 'Barrister-at-Law (B.L), Nigerian Law School'],
-    admissions: ['Supreme Court of Nigeria', 'Nigerian Bar Association (NBA)'],
-    email: 's.chukwu@racheykafchamber.com',
-    image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326284/Portrait_Profile_Picture.jpg_s6qxhf.jpg',
-    philosophy: 'Strong institutions are built upon sound governance, visionary leadership, and unwavering integrity.',
-  },
-  {
     id: 'ropo-olutekunbi',
     name: 'ROPO ABIODUN OLUTEKUNBI ESQ',
     role: 'Partner',
@@ -472,6 +453,25 @@ export const TEAM_MEMBERS: TeamMember[] = [
     email: 'r.olutekunbi@racheykafchamber.com',
     image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326284/WhatsApp_Image_2026-07-21_at_3.27.58_PM_aajzjc.jpg',
     philosophy: 'Every legal challenge deserves thoughtful analysis, strategic planning, and disciplined execution.',
+  },
+  {
+    id: 'samuel-chukwu',
+    name: 'SAMUEL C. CHUKWU ESQ.',
+    role: 'Partner',
+    title: 'Strategy, Governance & Capacity Development',
+    bio: 'Barr. Samuel C. Chukwu is a Partner whose practice combines legal advisory with institutional development, leadership consulting, governance, and strategic capacity building. He works with public institutions, private organisations, educational establishments, and development partners to strengthen governance structures.',
+    fullBio: [
+      'Barr. Samuel C. Chukwu is a Partner whose practice combines legal advisory with institutional development, leadership consulting, governance, and strategic capacity building. He works with public institutions, private organisations, educational establishments, and development partners to strengthen governance structures, improve regulatory compliance, and enhance organisational effectiveness.',
+      'Beyond legal advisory, Barr. Chukwu is passionate about leadership development and institutional transformation. He has facilitated professional training programmes, executive workshops, and governance seminars designed to improve organisational performance and promote ethical leadership.',
+      'His multidisciplinary perspective enables him to bridge legal, managerial, and strategic considerations, assisting clients in making informed decisions that support sustainable institutional growth.',
+      'Within the Firm, he leads initiatives relating to organisational strategy, policy development, knowledge management, and professional development.'
+    ],
+    expertise: ['Corporate Governance', 'Institutional Advisory', 'Policy Development', 'Capacity Building', 'Employment & Administrative Law', 'Alternative Dispute Resolution', 'Public Sector Advisory', 'Strategic Planning'],
+    education: ['LL.B (Hons)', 'Barrister-at-Law (B.L), Nigerian Law School'],
+    admissions: ['Supreme Court of Nigeria', 'Nigerian Bar Association (NBA)'],
+    email: 's.chukwu@racheykafchamber.com',
+    image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785326284/Portrait_Profile_Picture.jpg_s6qxhf.jpg',
+    philosophy: 'Strong institutions are built upon sound governance, visionary leadership, and unwavering integrity.',
   },
   {
     id: 'amarachi-nkem',

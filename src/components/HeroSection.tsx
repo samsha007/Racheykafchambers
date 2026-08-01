@@ -101,7 +101,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <img
               src={HERO_IMAGE}
               alt="Racheykaf Chamber Corporate Legal Practice"
-              className="w-full h-full object-cover object-top sm:object-center block transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className="w-full h-full object-cover object-center block transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              loading="eager"
               referrerPolicy="no-referrer"
             />
 

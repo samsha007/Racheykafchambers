@@ -34,7 +34,7 @@ export const WhoWeAre: React.FC<WhoWeAreProps> = () => {
                 <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-white/40 via-transparent to-transparent z-20 pointer-events-none" />
 
                 <img
-                  src="https://res.cloudinary.com/s79rmeha/image/upload/v1785341524/19545aa1-8849-4a96-a83d-2f32a2966cd2_uqfmnb.png"
+                  src="https://res.cloudinary.com/s79rmeha/image/upload/v1785624554/19545aa1-8849-4a96-a83d-2f32a2966cd2_du6y0l.png"
                   alt="Racheykaf Chamber Legal Advisors"
                   className="w-full h-full object-cover object-center aspect-[4/3] lg:aspect-[4/5] group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                   referrerPolicy="no-referrer"
