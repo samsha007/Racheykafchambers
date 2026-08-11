@@ -410,8 +410,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
       'Ambassador Ella\'s association with Racheykaf Chamber significantly enhances the Firm\'s multidisciplinary advisory capabilities, particularly in matters involving government institutions, diplomatic missions, multinational organisations, and international development partners.'
     ],
     expertise: ['Government Relations', 'Public Policy', 'International Diplomacy', 'Strategic Stakeholder Engagement', 'Institutional Development', 'International Negotiation', 'Cross-Border Advisory', 'Public Sector Reform'],
-    education: ['Diplomatic Executive Studies', 'Public Administration'],
-    admissions: ['Nigerian Foreign Service', 'Former Permanent Secretary'],
+    education: ['LL.B', 'Barrister-at-Law (B.L) – Nigerian Law School', 'LL.M', 'Diplomatic Executive Studies', 'Public Administration'],
+    admissions: ['Supreme Court of Nigeria', 'Member, Nigerian Bar Association', 'Nigerian Foreign Service', 'Former Permanent Secretary'],
     email: 'n.ella@racheykafchamber.com',
     image: 'https://res.cloudinary.com/s79rmeha/image/upload/v1785449667/WhatsApp_Image_2026-07-30_at_10.17.00_PM_ewws3v.jpg',
     philosophy: 'Enduring institutions are built through principled leadership, constructive engagement, and strategic vision.',
